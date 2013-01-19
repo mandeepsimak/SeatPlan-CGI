@@ -3,11 +3,7 @@
 BranchDetails :: BranchDetails()
 {
     ContentType();
-    branch_name = "BranchName";
-    total_subjects = "TotalSubjects";
-    subject_code = "SubjectCode";
-    subject_name = "SubjectName";
-    total_branches = "TotalBranches";
+    
 }
 
 void BranchDetails :: Head()
@@ -45,7 +41,7 @@ void BranchDetails :: BodyContent()
     cout << "</select>"
          << "<br><br>"
          
-         << "<table align = \"center\">"
+         << "<table align = \"center\" cellpadding=\"5\" >"
          
          << "<tr>"
          

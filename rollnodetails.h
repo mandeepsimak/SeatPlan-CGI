@@ -3,10 +3,6 @@
 class ReadBranchDetails : public HTMLTags
 {
     protected:
-    
-        string branch_name, total_subjects, subject_code, subject_name,
-               total_branches;
-    
         // for branch details
         int totalBranches, totalSubjects[MIN_SIZE];
         string branchName[MIN_SIZE], subjectName[MIN_SIZE][MIN_SIZE],

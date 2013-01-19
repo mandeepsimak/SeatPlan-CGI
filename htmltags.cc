@@ -1,5 +1,21 @@
 #include "htmltags.h"
 
+HTMLTags :: HTMLTags()
+{
+    // branch field names
+    branch_name = "BranchName";
+    total_subjects = "TotalSubjects";
+    subject_code = "SubjectCode";
+    subject_name = "SubjectName";
+    total_branches = "TotalBranches";
+    
+    // rollno field names
+    prefix = "Prefix";
+    start_rollno = "StartRollNo";
+    end_rollno = "EndRollNo";
+    not_included = "NotIncluded";
+}
+
 void HTMLTags :: ContentType()
 {
     cout << "Content-type:text/html\n\n";

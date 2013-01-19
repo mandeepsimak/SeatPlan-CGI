@@ -22,7 +22,7 @@ void HomeCSS :: Main()
 //         << "margin:auto;"
          << "width:100%;"
          << "background-color:white;"
-         << "height:600px;"
+         << "height:750px;"
          << "margin-top:10px"
          << "}"
          << ".left"

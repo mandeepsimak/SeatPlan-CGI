@@ -2,11 +2,7 @@
 
 ReadBranchDetails :: ReadBranchDetails()
 {
-    branch_name = "BranchName";
-    total_subjects = "TotalSubjects";
-    subject_code = "SubjectCode";
-    subject_name = "SubjectName";
-    total_branches = "TotalBranches";
+
 }
 
 void ReadBranchDetails :: readBranchDetails()
@@ -49,7 +45,37 @@ string ReadBranchDetails :: readField(string fieldname, int i)
 
 void ReadBranchDetails :: splitSujects()
 {
-
+    for(i = 0; i < totalBranches; i++)
+    {
+        int size = subjectcode[i].size() + 1;
+        char largchar[size]; // = roll[i].c_str();//"1-10 12 34 15 20 25-30";
+        j = 0; 
+        strcpy(largchar, subjectcode[i].c_str());
+        char* chars_array = strtok(largchar, ",");
+        while(chars_array)
+        {
+           if(j < totalSubjects[i])
+               subjectCode[i][j] =  chars_array;//atoi (chars_array));//n++;
+           chars_array = strtok(NULL, ",");
+           j++;
+        }
+    }
+    
+    for(i = 0; i < totalBranches; i++)
+    {
+        int size = subjectname[i].size() + 1;
+        char largchar[size]; // = roll[i].c_str();//"1-10 12 34 15 20 25-30";
+        j = 0; 
+        strcpy(largchar, subjectname[i].c_str());
+        char* chars_array = strtok(largchar, ",");
+        while(chars_array)
+        {
+           if(j < totalSubjects[i])
+               subjectName[i][j] =  chars_array;//atoi (chars_array));//n++;
+           chars_array = strtok(NULL, ",");
+           j++;
+        }
+    }
 }
 
 void ReadBranchDetails :: writeBranchDetails()
@@ -69,5 +95,6 @@ void ReadBranchDetails :: writeBranchDetails()
 void ReadBranchDetails :: Main()
 {
     readBranchDetails();
+    splitSujects();
     writeBranchDetails();
 }

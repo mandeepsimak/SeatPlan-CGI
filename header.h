@@ -3,11 +3,12 @@
 // file handling
 #include <fstream>
 
-#include <string>
+#include <cstring>
 #include <cstdio>
 #include <cstdlib>
 #include <sstream>
-#include <vector>  
+#include <vector>
+#include <sstream> 
 
 // file names
 #include "file-names.h"

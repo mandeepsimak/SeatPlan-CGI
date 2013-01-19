@@ -3,8 +3,6 @@
 class BranchDetails : public HTMLTags
 {
     protected:
-        string branch_name, total_subjects, subject_code, subject_name,
-               total_branches;
     
     public:
         BranchDetails();
