@@ -6,6 +6,10 @@ class HTMLTags
     protected:
     
     string ProjectName;
+    int i, j, k;
+    
+    ifstream infile;
+    ofstream outfile;
         
     public:
     
