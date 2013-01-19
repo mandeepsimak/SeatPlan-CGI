@@ -1,31 +1,35 @@
-CC = g++
-CFLAG = -c  # Compilation Flag
-OFLAG = -o  # O/p Flag
+CC      =   g++     #   
+CFLAG   =   -c      # Compilation Flag
+OFLAG   =   -o      # O/p Flag
+LCGICC  =   -lcgicc # cgicc lib flag
+
 #---------------------------------------------------------------------------
 # Header files(pages)
 HEADER              =   header.h
 HTMLTAGS_HEADER     =   htmltags.h $(HEADER)
 HOME_HEADER         =   home.h $(HTMLTAGS_HEADER)
 BRANCH_HEADER       =   branchdetails.h $(HTMLTAGS_HEADER)
-ROLLNO_HEADER       =   rollnodetails.h $(HTMLTAGS_HEADER)
+ROLLNO_HEADER       =   rollnodetails.h $(HTMLTAGS_HEADER) #$(READBRANCH_HEADER)
 STRATEGY_HEADER     =   strategy.h $(HTMLTAGS_HEADER)
 VALIDATION_HEADER   =   validation.h $(HTMLTAGS_HEADER)
 EXAM_HEADER         =   examdetails.h $(HTMLTAGS_HEADER)
 REPORT_HEADER       =   report.h $(HTMLTAGS_HEADER)
+
 #---------------------------------------------------------------------------
 # Header (CSS)
 CSS_HEADER = css.h $(HEADER)
 
 # Linking Object Files
-HTMLTags     =    htmltags.o # htmltags-main.o
-Home         =    $(HTMLTags) home.o home-main.o
-CSS          =    css.o css-main.o
-Branch       =    $(HTMLTags) branchdetails.o branchdetails-main.o
-RollNo       =    $(HTMLTags) rollnodetails.o rollnodetails-main.o
-Strategy     =    $(HTMLTags) strategy.o strategy-main.o
-Validation   =    $(HTMLTags) validation.o validation-main.o
-Exam         =    $(HTMLTags) examdetails.o examdetails-main.o
-Report       =    $(HTMLTags) report.o report-main.o
+HTMLTags    =   htmltags.o # htmltags-main.o
+Home        =   $(HTMLTags) home.o home-main.o
+CSS         =   css.o css-main.o
+Branch      =   $(HTMLTags) branchdetails.o branchdetails-main.o
+RollNo      =   $(HTMLTags) readbranchdetails.o rollnodetails.o rollnodetails-main.o
+Strategy    =   $(HTMLTags) strategy.o strategy-main.o
+Validation  =   $(HTMLTags) validation.o validation-main.o
+Exam        =   $(HTMLTags) examdetails.o examdetails-main.o
+Report      =   $(HTMLTags) report.o report-main.o
+
 #---------------------------------------------------------------------------
 # All Targets
 all: home.css home.html branchdetails.html rollnodetails.html strategy.html validation.html examdetails.html report.html
@@ -78,14 +82,26 @@ branchdetails.html: $(Branch)
 branch-run: branchdetails.html
 	./branchdetails.html
 #---------------------------------------------------------------------------
+#readbranchdetails.o: readbranchdetails.cc $(READBRANCH_HEADER) $(BRANCH_HEADER)
+#	$(CC) $(CFLAG) readbranchdetails.cc $(LCGICC)
+
+#readbranchdetails-main.o: readbranchdetails-main.cpp $(READBRANCH_HEADER) $(BRANCH_HEADER)
+#	$(CC) $(CFLAG) readbranchdetails-main.cpp
+
+#readbranchdetails: $(ReadBranchMain)
+#	$(CC) $(OFLAG) readbranchdetails $(ReadBranchMain) $(LCGICC)
+#---------------------------------------------------------------------------
 rollnodetails.o: rollnodetails.cc $(ROLLNO_HEADER)
-	$(CC) $(CFLAG) rollnodetails.cc
+	$(CC) $(CFLAG) rollnodetails.cc $(LCGICC)
+
+readbranchdetails.o: readbranchdetails.cc $(ROLLNO_HEADER)
+	$(CC) $(CFLAG) readbranchdetails.cc $(LCGICC)
 
 rollnodetails-main.o: rollnodetails-main.cpp $(ROLLNO_HEADER)
-	$(CC) $(CFLAG) rollnodetails-main.cpp
+	$(CC) $(CFLAG) rollnodetails-main.cpp $(LCGICC)
 
 rollnodetails.html: $(RollNo)
-	$(CC) $(OFLAG) rollnodetails.html $(RollNo)
+	$(CC) $(OFLAG) rollnodetails.html $(RollNo) $(LCGICC)
 
 rollno-run: rollnodetails.html
 	./rollnodetails.html
