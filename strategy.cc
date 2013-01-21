@@ -2,7 +2,7 @@
 
 Strategy :: Strategy()
 {
-//    ContentType();
+    ContentType();
 }
 
 void Strategy :: Head()

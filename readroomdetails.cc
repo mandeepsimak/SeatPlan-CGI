@@ -64,11 +64,27 @@ string ReadRoomDetails :: readField(string fieldname, int i, int j)
 
 void ReadRoomDetails :: writeRoomDetails()
 {
-
+    outfile.open(RoomDetails_in);
+    
+    outfile << totalCentres << endl;
+    
+    for(i = 0; i < totalCentres; i++)
+    {
+        outfile << centreNo[i] << endl
+                << totalRooms[i] << endl;
+        for(j = 0; j < totalRooms[i]; j++)
+        {
+            outfile << roomNo[i][j] << endl
+                    << roomRows[i][j] << " "
+                    << roomCols[i][j] << endl;
+        }
+    }
+    
+    outfile.close();
 }
 
 void ReadRoomDetails :: Main()
-{
-ContentType();    
+{   
     readRoomDetails();
+    writeRoomDetails();
 }
