@@ -3,17 +3,25 @@
 HTMLTags :: HTMLTags()
 {
     // branch field names
-    branch_name = "BranchName";
-    total_subjects = "TotalSubjects";
-    subject_code = "SubjectCode";
-    subject_name = "SubjectName";
-    total_branches = "TotalBranches";
+    branch_name     =    "BranchName";
+    total_subjects  =    "TotalSubjects";
+    subject_code    =    "SubjectCode";
+    subject_name    =    "SubjectName";
+    total_branches  =    "TotalBranches";
     
     // rollno field names
-    prefix = "Prefix";
-    start_rollno = "StartRollNo";
-    end_rollno = "EndRollNo";
-    not_included = "NotIncluded";
+    prefix          =    "Prefix";
+    start_rollno    =    "StartRollNo";
+    end_rollno      =    "EndRollNo";
+    not_included    =    "NotIncluded";
+    
+    // room field names
+    total_centres   =    "TotalCentres";
+    centre_no       =    "CentreNo";
+    total_rooms     =    "TotalRooms";
+    room_no         =    "RoomNo";
+    rows            =    "Rows";
+    cols            =    "Cols";
 }
 
 void HTMLTags :: ContentType()

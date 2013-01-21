@@ -15,6 +15,9 @@ class HTMLTags
     // roll no field names
     string prefix, start_rollno, end_rollno, not_included;
     
+    // room field names
+    string total_centres, centre_no, total_rooms, room_no, rows, cols;
+    
     ifstream infile;
     ofstream outfile;
         
