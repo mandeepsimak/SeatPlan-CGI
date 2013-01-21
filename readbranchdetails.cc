@@ -80,7 +80,7 @@ void ReadBranchDetails :: splitSujects()
 
 void ReadBranchDetails :: writeBranchDetails()
 {
-    outfile.open("BranchDetails.in");
+    outfile.open(BranchDetails_in);
     
     outfile << totalBranches << endl;
     

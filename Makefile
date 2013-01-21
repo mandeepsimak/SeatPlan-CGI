@@ -27,7 +27,7 @@ CSS         =   css.o css-main.o
 Branch      =   $(HTMLTags) branchdetails.o branchdetails-main.o
 RollNo      =   $(HTMLTags) readbranchdetails.o rollnodetails.o rollnodetails-main.o
 Room        =   $(HTMLTags) readrollnodetails.o roomdetails.o roomdetails-main.o
-Strategy    =   $(HTMLTags) strategy.o strategy-main.o
+Strategy    =   $(HTMLTags) readroomdetails.o strategy.o strategy-main.o
 Validation  =   $(HTMLTags) validation.o validation-main.o
 Exam        =   $(HTMLTags) examdetails.o examdetails-main.o
 Report      =   $(HTMLTags) report.o report-main.o
@@ -124,13 +124,16 @@ room-run: rollnodetails.html
 	./rollnodetails.html
 #---------------------------------------------------------------------------
 strategy.o: strategy.cc $(STRATEGY_HEADER)
-	$(CC) $(CFLAG) strategy.cc
+	$(CC) $(CFLAG) strategy.cc $(LCGICC)
+
+readroomdetails.o: readroomdetails.cc $(STRATEGY_HEADER)
+	$(CC) $(CFLAG) readroomdetails.cc $(LCGICC)
 
 strategy-main.o: strategy-main.cpp $(STRATEGY_HEADER)
-	$(CC) $(CFLAG) strategy-main.cpp
+	$(CC) $(CFLAG) strategy-main.cpp $(LCGICC)
 
 strategy.html: $(Strategy)
-	$(CC) $(OFLAG) strategy.html $(Strategy)
+	$(CC) $(OFLAG) strategy.html $(Strategy) $(LCGICC)
 
 strategy-run: strategy.html
 	./strategy.html

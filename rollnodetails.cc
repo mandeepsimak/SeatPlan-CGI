@@ -64,19 +64,19 @@ void RollNoDetails :: BodyContent()
             cout << "<td>" << branchName[i] << "</td>"
                  << "<td>" << subjectCode[i][j] << "</td>";
             
-            cout << "<td><input type=\"text\" name=\"" << prefix << k << "\""
+            cout << "<td><input type=\"text\" name=\"" << prefix << totalFields+1 << "\""
                  << " value = \"" << rnoprefix[totalFields] << "\" "
                  << ">"
                  << "</td>"
-                 << "<td><input type=\"text\" name=\"" << start_rollno << k << "\""
+                 << "<td><input type=\"text\" name=\"" << start_rollno << totalFields+1 << "\""
                  << " value = \"" << startRollNo[totalFields] << "\" "
                  << ">"
                  << "</td>"
-                 << "<td><input type=\"text\" name=\"" << end_rollno << k << "\""
+                 << "<td><input type=\"text\" name=\"" << end_rollno << totalFields+1 << "\""
                  << " value = \"" << endRollNo[totalFields] << "\" "
                  << ">"
                  << "</td>"
-                 << "<td><input type=\"text\" name=\"" << not_included << k << "\""
+                 << "<td><input type=\"text\" name=\"" << not_included << totalFields+1 << "\""
                  << " value = \"" << notIncluded[totalFields] << "\" "
                  << ">"
                  << "</td>";

@@ -8,7 +8,7 @@ Strategy :: Strategy()
 void Strategy :: Head()
 {
     HeadStart();
-    Title("Branch Details");
+    Title("Strategy");
     CSS();
     HeadEnd();
 }
@@ -34,9 +34,9 @@ void Strategy :: Body()
     BodyEnd();
 }
 
-
 void Strategy :: Main()
 {
+    ReadRoomDetails :: Main();
     HTMLStart();    
     
     Head();

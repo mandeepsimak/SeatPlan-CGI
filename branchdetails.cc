@@ -53,7 +53,7 @@ void BranchDetails :: BodyContent()
         if(i == 6)
             cout << "selected";
         cout << " > "
-            << i << "</option>";
+             << i << "</option>";
     }
     
     cout << "</select>"
