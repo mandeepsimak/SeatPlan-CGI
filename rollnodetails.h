@@ -16,6 +16,9 @@ class ReadBranchDetails : public HTMLTags
         // cgicc variables nd objts
         Cgicc formData;
         form_iterator fi;
+        
+        // total fields
+        int totalFields;
 
     public:
         ReadBranchDetails();
@@ -30,6 +33,7 @@ class RollNoDetails : public ReadBranchDetails
 {    
     public:
         RollNoDetails();
+        void showTotalFields();
         void Head();
         void Javascript();
         void Body();

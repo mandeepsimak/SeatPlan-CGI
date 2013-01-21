@@ -15,3 +15,5 @@
 # css, html
 *.css
 *.html
+*.in
+*.txt

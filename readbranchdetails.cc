@@ -2,7 +2,7 @@
 
 ReadBranchDetails :: ReadBranchDetails()
 {
-
+    
 }
 
 void ReadBranchDetails :: readBranchDetails()
@@ -84,10 +84,14 @@ void ReadBranchDetails :: writeBranchDetails()
     
     outfile << totalBranches << endl;
     
-//    for(i = 0; i < 10; i++)
-//    {
-//        outfile << branchName[i] << endl;
-//    }
+    for(i = 0; i < totalBranches; i++)
+    {
+        outfile << branchName[i] << endl
+                << totalSubjects[i] << endl;
+        for(j = 0; j < totalSubjects[i]; j++)
+            outfile << subjectName[i][j] << endl
+                    << subjectCode[i][j] << endl;
+    }
     
     outfile.close();
 }

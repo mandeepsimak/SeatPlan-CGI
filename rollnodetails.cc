@@ -3,6 +3,7 @@
 RollNoDetails :: RollNoDetails()
 {
     ContentType();
+    totalFields = 0;
 }
 
 void RollNoDetails :: Head()
@@ -15,6 +16,24 @@ void RollNoDetails :: Head()
 
 void RollNoDetails :: BodyContent()
 {
+
+    string rnoprefix[20] = {"IT", "CSE", "ECE", "ME", 
+                             "P E", "EE", "IT2", 
+                             "E E", "CSci", "MBA", "P1", "p2", "P3", "P4", "p5"
+                             "p6", "p7", "p8", "p9", "910"};
+                                 
+    string startRollNo[20] = {"101", "201", "301", "401", "501", "601", "801", 
+                              "901", "1001", "2001", "3001", "4001", "5001",
+                              "6001", "7001", "8001", "9001", "10001"};
+        
+    string endRollNo[20] = {"121", "231", "351", "466", "509", "611", "851", 
+                              "906", "1018", "2034", "3012", "4022", "5011",
+                              "6013", "7035", "8075", "9012", "10011"};
+                              
+    string notIncluded[20] = {"111 120", "230", "311-120", "419 435", "503", " ", "840-844", 
+                              "903", "1008", "2024", "3010", "4011-4014 4020", "5004",
+                              "6003", "7035", "8075", "9002 9005", "10008"};
+
     cout << "<div id = \"body\" class = \"center\">" << endl;
          
     Header();
@@ -45,16 +64,25 @@ void RollNoDetails :: BodyContent()
             cout << "<td>" << branchName[i] << "</td>"
                  << "<td>" << subjectCode[i][j] << "</td>";
             
-            cout << "<td><input type=\"text\" name=\"" << prefix << k << "\">"
+            cout << "<td><input type=\"text\" name=\"" << prefix << k << "\""
+                 << " value = \"" << rnoprefix[totalFields] << "\" "
+                 << ">"
                  << "</td>"
-                 << "<td><input type=\"text\" name=\"" << start_rollno << k << "\">"
+                 << "<td><input type=\"text\" name=\"" << start_rollno << k << "\""
+                 << " value = \"" << startRollNo[totalFields] << "\" "
+                 << ">"
                  << "</td>"
-                 << "<td><input type=\"text\" name=\"" << end_rollno << k << "\">"
+                 << "<td><input type=\"text\" name=\"" << end_rollno << k << "\""
+                 << " value = \"" << endRollNo[totalFields] << "\" "
+                 << ">"
                  << "</td>"
-                 << "<td><input type=\"text\" name=\"" << not_included << k << "\">"
+                 << "<td><input type=\"text\" name=\"" << not_included << k << "\""
+                 << " value = \"" << notIncluded[totalFields] << "\" "
+                 << ">"
                  << "</td>";
             
             cout << "</tr>";
+            totalFields++;
         } 
     }     
     
@@ -66,6 +94,14 @@ void RollNoDetails :: BodyContent()
      
     cout << "</div>" << endl
          << "</div>" << endl;
+    showTotalFields();
+}
+
+void RollNoDetails :: showTotalFields()
+{
+    outfile.open(TotalFields);
+    outfile << totalFields;
+    outfile.close();
 }
 
 void RollNoDetails :: Body()
@@ -79,7 +115,6 @@ void RollNoDetails :: Body()
 void RollNoDetails :: Main()
 {
     ReadBranchDetails :: Main();
-    
     HTMLStart();    
     
     Head();
