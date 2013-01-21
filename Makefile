@@ -10,6 +10,7 @@ HTMLTAGS_HEADER     =   htmltags.h $(HEADER)
 HOME_HEADER         =   home.h $(HTMLTAGS_HEADER)
 BRANCH_HEADER       =   branchdetails.h $(HTMLTAGS_HEADER)
 ROLLNO_HEADER       =   rollnodetails.h $(HTMLTAGS_HEADER) #$(READBRANCH_HEADER)
+ROOM_HEADER         =   roomdetails.h $(HTMLTAGS_HEADER)
 STRATEGY_HEADER     =   strategy.h $(HTMLTAGS_HEADER)
 VALIDATION_HEADER   =   validation.h $(HTMLTAGS_HEADER)
 EXAM_HEADER         =   examdetails.h $(HTMLTAGS_HEADER)
@@ -25,6 +26,7 @@ Home        =   $(HTMLTags) home.o home-main.o
 CSS         =   css.o css-main.o
 Branch      =   $(HTMLTags) branchdetails.o branchdetails-main.o
 RollNo      =   $(HTMLTags) readbranchdetails.o rollnodetails.o rollnodetails-main.o
+Room        =   $(HTMLTags) readrollnodetails.o roomdetails.o roomdetails-main.o
 Strategy    =   $(HTMLTags) strategy.o strategy-main.o
 Validation  =   $(HTMLTags) validation.o validation-main.o
 Exam        =   $(HTMLTags) examdetails.o examdetails-main.o
@@ -32,7 +34,7 @@ Report      =   $(HTMLTags) report.o report-main.o
 
 #---------------------------------------------------------------------------
 # All Targets
-all: home.css home.html branchdetails.html rollnodetails.html strategy.html validation.html examdetails.html report.html
+all: home.css home.html branchdetails.html rollnodetails.html roomdetails.html strategy.html validation.html examdetails.html report.html
 #---------------------------------------------------------------------------
 htmltags.o: htmltags.cc $(HEADER)
 	$(CC) $(CFLAG) htmltags.cc
@@ -104,6 +106,21 @@ rollnodetails.html: $(RollNo)
 	$(CC) $(OFLAG) rollnodetails.html $(RollNo) $(LCGICC)
 
 rollno-run: rollnodetails.html
+	./rollnodetails.html
+#---------------------------------------------------------------------------
+roomdetails.o: roomdetails.cc $(ROOM_HEADER)
+	$(CC) $(CFLAG) roomdetails.cc $(LCGICC)
+
+readrollnodetails.o: readrollnodetails.cc $(ROOM_HEADER)
+	$(CC) $(CFLAG) readrollnodetails.cc $(LCGICC)
+
+roomdetails-main.o: roomdetails-main.cpp $(ROOM_HEADER)
+	$(CC) $(CFLAG) roomdetails-main.cpp $(LCGICC)
+
+roomdetails.html: $(Room)
+	$(CC) $(OFLAG) roomdetails.html $(Room) $(LCGICC)
+
+room-run: rollnodetails.html
 	./rollnodetails.html
 #---------------------------------------------------------------------------
 strategy.o: strategy.cc $(STRATEGY_HEADER)

@@ -18,9 +18,9 @@ void RollNoDetails :: BodyContent()
 {
 
     string rnoprefix[20] = {"IT", "CSE", "ECE", "ME", 
-                             "P E", "EE", "IT2", 
+                             " ", "EE", " ", 
                              "E E", "CSci", "MBA", "P1", "p2", "P3", "P4", "p5"
-                             "p6", "p7", "p8", "p9", "910"};
+                             "p6", "p7", " ", "p9", "910"};
                                  
     string startRollNo[20] = {"101", "201", "301", "401", "501", "601", "801", 
                               "901", "1001", "2001", "3001", "4001", "5001",
@@ -30,9 +30,9 @@ void RollNoDetails :: BodyContent()
                               "906", "1018", "2034", "3012", "4022", "5011",
                               "6013", "7035", "8075", "9012", "10011"};
                               
-    string notIncluded[20] = {"111 120", "230", "311-120", "419 435", "503", " ", "840-844", 
+    string notIncluded[20] = {"111 120", "230", "311-120", "419 435", "503", "0", "840-844", 
                               "903", "1008", "2024", "3010", "4011-4014 4020", "5004",
-                              "6003", "7035", "8075", "9002 9005", "10008"};
+                              "0", "7035", "8075", "9002 9005", "10008"};
 
     cout << "<div id = \"body\" class = \"center\">" << endl;
          
@@ -42,7 +42,7 @@ void RollNoDetails :: BodyContent()
          
          << "<br> <h3> Fill Roll No Details</h3> <br>"
          
-         << "<form name=\"rollnodetails\" action=\" \" method=\"post\">"         
+         << "<form name=\"rollnodetails\" action=\"roomdetails.html\" method=\"post\">"         
          
          << "<table align = \"center\" cellpadding=\"5\" >"
          

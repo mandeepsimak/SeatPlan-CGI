@@ -83,7 +83,7 @@ void BranchDetails :: BodyContent()
         {
             cout << "<option value=\""
                  << i << "\"";
-            if(j >= 0 && j <=3 && i == 2)
+            if(j >= 1 && j <=3 && i == 2)
                 cout << " selected ";
             if(j >= 4 && j <=7 && i == 1)
                 cout << " selected ";
