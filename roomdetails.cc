@@ -29,7 +29,7 @@ void RoomDetails :: BodyContent()
          << "<form name=\"roomdetails\" action=\"strategy.html\" method=\"post\">" << endl 
          << "<h3> Fill Room Details </h3> <br>" << endl      
          << "<br>"
-         << "Total Centres <select name=\" " << total_centres << "\">";
+         << "Total Centres <select name=\"" << total_centres << "\">";
          
     for(i = 1; i <= 3; i++)
     {
@@ -49,16 +49,15 @@ void RoomDetails :: BodyContent()
         cout << "Centre Name " 
              << "<input type=\"text\" name=\"" << centre_no << (i+1) << "\""
              << "value = \"Centre " << (i+1) << "\">"
-             << "           Total Rooms " << "<select name=\" " 
-             << total_rooms << (i+1) << "\">";
-            for(j = 1; j <= 5; j++)
+             << "    Total Rooms " << "<select name=\"TotalRooms" << (i+1) << "\">";
+            for(k = 1; k <= 5; k++)
             {
                 cout << "<option value=\""
-                     << i << "\" ";
-                if(j == 4)
+                     << k << "\" ";
+                if(k == 4)
                     cout << "selected";     
                 cout << " > "
-                     << j << "</option>";
+                     << k << "</option>";
             }   
         cout << "</select>"
              << "<br><br>"

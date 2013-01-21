@@ -17,7 +17,8 @@ class ReadRoomDetails : public HTMLTags
     public:
         ReadRoomDetails(){}
         void readRoomDetails();
-        string readField(string fieldname, int i);
+        string readField(string, int);
+        string readField(string, int, int);
         void writeRoomDetails();
         void Main();
 };

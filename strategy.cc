@@ -2,7 +2,7 @@
 
 Strategy :: Strategy()
 {
-    ContentType();
+//    ContentType();
 }
 
 void Strategy :: Head()
@@ -20,7 +20,6 @@ void Strategy :: BodyContent()
     Header();
     
     cout << "<div id = \"content\" class = \"content\">" << endl
-         
          
          
          << "</div>" << endl
