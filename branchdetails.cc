@@ -48,9 +48,12 @@ void BranchDetails :: BodyContent()
          
     for(i = 1; i <= 10; i++)
     {
-         cout << "<option value=\""
-              << i << "\" > "
-              << i << "</option>";
+        cout << "<option value=\""
+             << i << "\"";
+        if(i == 6)
+            cout << "selected";
+        cout << " > "
+            << i << "</option>";
     }
     
     cout << "</select>"
