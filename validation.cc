@@ -5,6 +5,11 @@ Validation :: Validation()
     ContentType();
 }
 
+void Validation :: readStrategy()
+{
+    
+}
+
 void Validation :: Head()
 {
     HeadStart();

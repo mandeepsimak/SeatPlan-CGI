@@ -5,7 +5,8 @@ LCGICC  =   -lcgicc # cgicc lib flag
 
 #---------------------------------------------------------------------------
 # Header files(pages)
-HEADER              =   header.h
+FILENAMES           =   file-names.h
+HEADER              =   header.h $(FILENAMES)
 HTMLTAGS_HEADER     =   htmltags.h $(HEADER)
 HOME_HEADER         =   home.h $(HTMLTAGS_HEADER)
 BRANCH_HEADER       =   branchdetails.h $(HTMLTAGS_HEADER)

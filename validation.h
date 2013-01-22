@@ -10,5 +10,6 @@ class Validation : public HTMLTags
         void Javascript();
         void Body();
         void BodyContent();
+        void readStrategy();
         void Main();
 };
