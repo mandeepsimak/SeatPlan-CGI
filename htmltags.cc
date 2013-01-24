@@ -61,7 +61,7 @@ void HTMLTags :: BodyEnd()
 
 void HTMLTags :: Title(string title)
 {
-    ProjectName = "BeSeated";
+    ProjectName = "BAKA PLAN";
     cout << "<title>" << ProjectName << ": " << title << "</title>";
 }
 
@@ -76,7 +76,7 @@ void HTMLTags :: Header()
 {
     cout << "<div id = \"header\" >" << endl
 //         << "<h1><a href=\"http://localhost/~mandy/cgi-bin/SP/home.html\"> BeSeated </h1></a>" << endl
-         << "<h1> BeSeated </h1>" << endl
+         << "<h1> BaKaPlan </h1>" << endl
          << "<div id = \"image\">" << endl
          << "<img src=\"../../SeatPlan/images/image.jpg\" "
          << "width=\"100%\" height=\"200\" alt=\"some_text\">" << endl

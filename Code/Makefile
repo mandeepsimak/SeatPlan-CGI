@@ -1,5 +1,5 @@
 CC = g++
-CFLAG = -c  # Compilation Flag
+CFLAG = -c -g # Compilation Flag
 OFLAG = -o  # O/p Flag
 
 # Header files
